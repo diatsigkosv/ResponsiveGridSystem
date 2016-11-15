@@ -12,11 +12,11 @@ Bootstrap alike Grid System for Universal Windows Platform.
 <ext:Row 
   MaxColumns="12" 
   ColumnSpace="5" 
-  Style="{StaticResource BaseRowStyle}"
   ColumnHeightInMobile="100" 
   ColumnHeightInTablet="120" 
   ColumnHeightInDesktop="140" 
-  ColumnHeightInHub="150">
+  ColumnHeightInHub="150"
+  Style="{StaticResource BaseRowStyle}">
   <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
     <Grid Background="LightGray" />
   </ext:Column>
