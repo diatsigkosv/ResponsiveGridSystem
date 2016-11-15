@@ -17,13 +17,13 @@ Bootstrap alike Grid System for Universal Windows Platform.
   ColumnHeightInDesktop="140" 
   ColumnHeightInHub="150"
   Style="{StaticResource BaseRowStyle}">
-  <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
+  <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="2" ColumnsInHub="3">
     <Grid Background="LightGray" />
   </ext:Column>
-  <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
+  <ext:Column ColumnsInMobile="12" ColumnsInTablet="4" ColumnsInDesktop="5" ColumnsInHub="3">
     <Grid Background="LightGray" />
   </ext:Column>
-  <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
+  <ext:Column ColumnsInMobile="12" ColumnsInTablet="2" ColumnsInDesktop="5" ColumnsInHub="6">
     <Grid Background="LightGray" />
   </ext:Column>
 </ext:Row>
