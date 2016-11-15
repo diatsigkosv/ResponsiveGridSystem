@@ -109,6 +109,7 @@ namespace ResponsiveGridSystem
         public Column()
         {
             MinWidth = 0;
+            MinHeight = 0;
             HorizontalContentAlignment = HorizontalAlignment.Stretch;
             VerticalContentAlignment = VerticalAlignment.Stretch;
         }
