@@ -1,0 +1,122 @@
+﻿<Page
+    x:Class="ResponsiveGridSystem.SampleApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ext="using:ResponsiveGridSystem"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot Title="Responsive Grid System for UWP">
+
+            <PivotItem Header="SAMPLE 1">
+                <ScrollViewer>
+                    <ext:Row MaxColumns="12" ColumnSpace="5" ColumnHeightInMobile="10">
+                        <ext:Column ColumnsInMobile="1">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="11">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="2">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="10">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="3">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="9">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="4">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="8">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="5">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="7">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="6">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="6">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="7">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="5">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="8">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="4">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="9">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="3">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="10">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="2">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="11">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="1">
+                            <Grid Background="LightGray"/>
+                        </ext:Column>
+                    </ext:Row>
+                </ScrollViewer>
+            </PivotItem>
+            
+            <PivotItem Header="SAMPLE 2">
+                <ScrollViewer>
+                    <ext:Row MaxColumns="12" ColumnSpace="5" ColumnHeightInMobile="200">
+                        <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
+                            <Grid Background="LightGray" />
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
+                            <Grid Background="LightGray" />
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
+                            <Grid Background="LightGray" />
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
+                            <Grid Background="LightGray" />
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
+                            <Grid Background="LightGray" />
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
+                            <Grid Background="LightGray" />
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
+                            <Grid Background="LightGray" />
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
+                            <Grid Background="LightGray" />
+                        </ext:Column>
+                        <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
+                            <Grid Background="LightGray" />
+                        </ext:Column>
+                    </ext:Row>
+                </ScrollViewer>
+            </PivotItem>
+            
+        </Pivot>
+    </Grid>
+</Page>
