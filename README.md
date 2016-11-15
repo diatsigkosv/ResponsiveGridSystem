@@ -34,9 +34,9 @@ Bootstrap alike Grid System for Universal Windows Platform.
 * **MaxColumns**: int (12)
 * **ColumnSpace**:  Thickness (default)
 * **ColumnHeightInMobile**: double (default)
-* **ColumnHeightInTablet**: double (default)
-* **ColumnHeightInDesktop**: double (default)
-* **ColumnHeightInHub**: double (default)
+* **ColumnHeightInTablet**: double (if not set: ColumnHeightInMobile)
+* **ColumnHeightInDesktop**: double (if not set: ColumnHeightInTablet)
+* **ColumnHeightInHub**: double (if not set: ColumnHeightInDesktop)
 * **MaxMobileWidth**: double (640)
 * **MaxTabletWidth**: double (1007)
 * **MaxDesktopWidth**: double (1920)
@@ -44,6 +44,6 @@ Bootstrap alike Grid System for Universal Windows Platform.
 ## Column Class Wiki:
 ###Dependency Properties
 * **ColumnsInMobile**: int (12)
-* **ColumnsInTablet**: int (12)
-* **ColumnsInDesktop**: int (12)
-* **ColumnsInHub**: int (12)
+* **ColumnsInTablet**: int (if not set: ColumnsInMobile)
+* **ColumnsInDesktop**: int (if not set: ColumnsInTablet)
+* **ColumnsInHub**: int (if not set: ColumnsInDesktop)
