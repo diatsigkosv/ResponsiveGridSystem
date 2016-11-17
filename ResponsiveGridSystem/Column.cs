@@ -27,7 +27,7 @@ namespace ResponsiveGridSystem
     /// Class Column.
     /// </summary>
     /// <seealso cref="Windows.UI.Xaml.Controls.GridViewItem" />
-    public class Column : GridViewItem
+    public class Column : Grid
     {
         #region Properties
 
@@ -110,8 +110,6 @@ namespace ResponsiveGridSystem
         {
             MinWidth = 0;
             MinHeight = 0;
-            HorizontalContentAlignment = HorizontalAlignment.Stretch;
-            VerticalContentAlignment = VerticalAlignment.Stretch;
         }
 
         #endregion

@@ -33,21 +33,9 @@ namespace ResponsiveGridSystem
     /// Class Row.
     /// </summary>
     /// <seealso cref="Windows.UI.Xaml.Controls.GridView" />
-    public class Row : GridView
+    public class Row : WrapPanel
     {
         #region Properties
-
-        /// <summary>
-        /// Gets or sets the selection behavior for a ListViewBase instance.
-        /// </summary>
-        /// <value>The selection mode.</value>
-        public new ListViewSelectionMode SelectionMode { get; private set; }
-
-        /// <summary>
-        /// Gets or sets the style that is used when rendering the item containers.
-        /// </summary>
-        /// <value>The item container style.</value>
-        public new Style ItemContainerStyle { get; private set; }
 
         /// <summary>
         /// Gets or sets the column space.
@@ -206,54 +194,12 @@ namespace ResponsiveGridSystem
         /// </summary>
         public Row()
         {
-            Loaded += OnLoaded;
             SizeChanged += OnSizeChanged;
-            ItemsPanel = GetItemsPanelTemplate();
-            SelectionMode = ListViewSelectionMode.None;
-            Padding = new Thickness(0);
-        }
-
-        #endregion
-
-        #region Override Methods
-
-        /// <summary>
-        /// Prepares the container for item override.
-        /// </summary>
-        /// <param name="obj">The object.</param>
-        /// <param name="item">The item.</param>
-        protected override void PrepareContainerForItemOverride(DependencyObject obj, object item)
-        {
-            base.PrepareContainerForItemOverride(obj, item);
-            var element = obj as FrameworkElement;
-            if (element == null)
-            {
-                return;
-            }
-            element.Margin = ColumnSpace;
-            element.Style = GetItemStyle();
         }
 
         #endregion
 
         #region Private Methods
-
-        /// <summary>
-        /// Handles the <see cref="E:Loaded" /> event.
-        /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="routedEventArgs">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
-        {
-            var scrollViewer = this.GetFirstDescendantOfType<ScrollViewer>();
-            if (scrollViewer != null)
-            {
-                scrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Disabled;
-                scrollViewer.VerticalScrollMode = ScrollMode.Disabled;
-                scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled;
-                scrollViewer.HorizontalScrollMode = ScrollMode.Disabled;
-            }
-        }
 
         /// <summary>
         /// Handles the <see cref="E:SizeChanged" /> event.
@@ -316,6 +262,7 @@ namespace ResponsiveGridSystem
 
                 column.Width = (width * currentColumns / MaxColumns) - (ColumnSpace.Left + ColumnSpace.Right + 1);
                 column.Height = columnHeight;
+                column.Margin = ColumnSpace;
             }
         }
 
@@ -342,44 +289,6 @@ namespace ResponsiveGridSystem
             }
 
             return DeviceTypeEnum.Mobile;
-        }
-
-        /// <summary>
-        /// Gets the items panel template.
-        /// </summary>
-        /// <returns>ItemsPanelTemplate.</returns>
-        private ItemsPanelTemplate GetItemsPanelTemplate()
-        {
-            var xamlTemplate =
-                @"<ItemsPanelTemplate 
-                    xmlns='http://schemas.microsoft.com/winfx/2006/xaml/presentation' 
-                    xmlns:x='http://schemas.microsoft.com/winfx/2006/xaml' 
-                    xmlns:ext='using:ResponsiveGridSystem'>
-                    <ext:WrapPanel Orientation='Horizontal'/>
-                  </ItemsPanelTemplate>";
-            return XamlReader.Load(xamlTemplate) as ItemsPanelTemplate;
-        }
-
-        /// <summary>
-        /// Gets the item style.
-        /// </summary>
-        /// <returns>Style.</returns>
-        private Style GetItemStyle()
-        {
-            var xamlTemplate =
-                @"<Style 
-                    xmlns='http://schemas.microsoft.com/winfx/2006/xaml/presentation' 
-                    xmlns:x='http://schemas.microsoft.com/winfx/2006/xaml'  
-                    TargetType='GridViewItem'>
-                     <Setter Property='Template'>
-                        <Setter.Value>
-                            <ControlTemplate TargetType ='GridViewItem'>
-                                <ContentPresenter/>
-                            </ControlTemplate >  
-                        </Setter.Value>
-                    </Setter>
-                </Style>";
-            return XamlReader.Load(xamlTemplate) as Style;
         }
 
         #endregion

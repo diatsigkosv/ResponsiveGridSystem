@@ -12,7 +12,7 @@
 
             <PivotItem Header="SAMPLE 1">
                 <ScrollViewer>
-                    <ext:Row MaxColumns="12" ColumnSpace="5" ColumnHeightInMobile="10">
+                    <ext:Row MaxColumns="12" ColumnSpace="5" ColumnHeightInMobile="50">
                         <ext:Column ColumnsInMobile="1">
                             <Grid Background="LightGray"/>
                         </ext:Column>
