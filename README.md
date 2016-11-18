@@ -47,3 +47,8 @@ Bootstrap alike Grid System for Universal Windows Platform.
 * **ColumnsInTablet**: int (if not set: ColumnsInMobile)
 * **ColumnsInDesktop**: int (if not set: ColumnsInTablet)
 * **ColumnsInHub**: int (if not set: ColumnsInDesktop)
+* **OffsetInMobile**: int (default)
+* **OffsetInTablet**: int (if not set: OffsetInMobile)
+* **OffsetInDesktop**: int (if not set: OffsetInTablet)
+* **OffsetInHub**: int (if not set: OffsetInDesktop)
+* **HideInDevice**: HideInDevices (**None=0**|MobileDown=1|TabletDown=2|DesktopDown=4|HubDown=8|MobileUp=16|TabletUp=32|DesktopUp=64|HubUp=128)
