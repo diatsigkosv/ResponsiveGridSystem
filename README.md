@@ -1,5 +1,5 @@
 # ResponsiveGridSystem
-Bootstrap alike Grid System for Universal Windows Platform.
+Bootstrap like Grid System for Universal Windows Platform.
 
 ##Sample:
 ```xaml
