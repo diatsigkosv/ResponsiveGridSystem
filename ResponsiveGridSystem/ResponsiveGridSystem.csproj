@@ -108,7 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Column.cs" />
-    <Compile Include="Enums\DeviceTypeEnum.cs" />
+    <Compile Include="Enums\DeviceTypes.cs" />
+    <Compile Include="Enums\HideInDevices.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\VisualTreeHelperExtensions.cs" />
     <Compile Include="OrientedSize.cs" />
     <Compile Include="Row.cs" />

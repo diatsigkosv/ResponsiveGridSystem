@@ -54,7 +54,14 @@ namespace ResponsiveGridSystem
         public int MaxColumns
         {
             get { return (int)GetValue(MaxColumnsProperty); }
-            set { SetValue(MaxColumnsProperty, value); }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(MaxColumns));
+                }
+                SetValue(MaxColumnsProperty, value);
+            }
         }
 
         /// <summary>
@@ -63,8 +70,15 @@ namespace ResponsiveGridSystem
         /// <value>The maximum width of the mobile.</value>
         public double MaxMobileWidth
         {
-            get { return (double)GetValue(Row.MaxMobileWidthProperty); }
-            set { SetValue(Row.MaxMobileWidthProperty, value); }
+            get { return (double)GetValue(MaxMobileWidthProperty); }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(MaxColumns));
+                }
+                SetValue(MaxMobileWidthProperty, value);
+            }
         }
 
         /// <summary>
@@ -73,8 +87,15 @@ namespace ResponsiveGridSystem
         /// <value>The maximum width of the tablet.</value>
         public double MaxTabletWidth
         {
-            get { return (double)GetValue(Row.MaxTabletWidthProperty); }
-            set { SetValue(Row.MaxTabletWidthProperty, value); }
+            get { return (double)GetValue(MaxTabletWidthProperty); }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(MaxColumns));
+                }
+                SetValue(MaxTabletWidthProperty, value);
+            }
         }
 
         /// <summary>
@@ -83,8 +104,15 @@ namespace ResponsiveGridSystem
         /// <value>The maximum width of the desktop.</value>
         public double MaxDesktopWidth
         {
-            get { return (double)GetValue(Row.MaxDesktopWidthProperty); }
-            set { SetValue(Row.MaxDesktopWidthProperty, value); }
+            get { return (double)GetValue(MaxDesktopWidthProperty); }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(MaxColumns));
+                }
+                SetValue(MaxDesktopWidthProperty, value);
+            }
         }
 
         /// <summary>
@@ -94,7 +122,14 @@ namespace ResponsiveGridSystem
         public double ColumnHeightInMobile
         {
             get { return (double)GetValue(ColumnHeightInMobileProperty); }
-            set { SetValue(ColumnHeightInMobileProperty, value); }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(MaxColumns));
+                }
+                SetValue(ColumnHeightInMobileProperty, value);
+            }
         }
 
         /// <summary>
@@ -104,7 +139,14 @@ namespace ResponsiveGridSystem
         public double ColumnHeightInTablet
         {
             get { return (double)GetValue(ColumnHeightInTabletProperty); }
-            set { SetValue(ColumnHeightInTabletProperty, value); }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(MaxColumns));
+                }
+                SetValue(ColumnHeightInTabletProperty, value);
+            }
         }
 
         /// <summary>
@@ -114,7 +156,14 @@ namespace ResponsiveGridSystem
         public double ColumnHeightInDesktop
         {
             get { return (double)GetValue(ColumnHeightInDesktopProperty); }
-            set { SetValue(ColumnHeightInDesktopProperty, value); }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(MaxColumns));
+                }
+                SetValue(ColumnHeightInDesktopProperty, value);
+            }
         }
 
         /// <summary>
@@ -124,7 +173,14 @@ namespace ResponsiveGridSystem
         public double ColumnHeightInHub
         {
             get { return (double)GetValue(ColumnHeightInHubProperty); }
-            set { SetValue(ColumnHeightInHubProperty, value); }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(MaxColumns));
+                }
+                SetValue(ColumnHeightInHubProperty, value);
+            }
         }
 
         #endregion
@@ -216,12 +272,19 @@ namespace ResponsiveGridSystem
             {
 
                 int currentColumns;
+                int currentOffset;
                 double columnHeight;
+                bool isHidden;
 
                 var columnsInMobile = column.ColumnsInMobile > 0 ? column.ColumnsInMobile : 12;
                 var columnsInTablet = column.ColumnsInTablet > 0 ? column.ColumnsInTablet : columnsInMobile;
                 var columnsInDesktop = column.ColumnsInDesktop > 0 ? column.ColumnsInDesktop : columnsInTablet;
                 var columnsInHub = column.ColumnsInHub > 0 ? column.ColumnsInHub : columnsInDesktop;
+
+                var offsetInMobile = column.OffsetInMobile > 0 ? column.OffsetInMobile : 0;
+                var offsetInTablet = column.OffsetInTablet > 0 ? column.OffsetInTablet : offsetInMobile;
+                var offsetInDesktop = column.OffsetInDesktop > 0 ? column.OffsetInDesktop : offsetInTablet;
+                var offsetInHub = column.OffsetInHub > 0 ? column.OffsetInHub : offsetInDesktop;
 
                 var columnHeightInMobile = ColumnHeightInMobile > 0 ? ColumnHeightInMobile : 0;
                 var columnHeightInTablet = ColumnHeightInTablet > 0 ? ColumnHeightInTablet : columnHeightInMobile;
@@ -230,28 +293,36 @@ namespace ResponsiveGridSystem
 
                 switch (deviceType)
                 {
-                    case DeviceTypeEnum.Mobile:
+                    case DeviceTypes.Mobile:
                         {
                             currentColumns = columnsInMobile;
+                            currentOffset = offsetInMobile;
                             columnHeight = columnHeightInMobile;
+                            isHidden = column.HideInDevice.HasFlags(HideInDevices.MobileDown | HideInDevices.TabletDown | HideInDevices.DesktopDown | HideInDevices.HubDown | HideInDevices.MobileUp);
                             break;
                         }
-                    case DeviceTypeEnum.Tablet:
+                    case DeviceTypes.Tablet:
                         {
                             currentColumns = columnsInTablet;
+                            currentOffset = offsetInTablet;
                             columnHeight = columnHeightInTablet;
+                            isHidden = column.HideInDevice.HasFlags(HideInDevices.TabletDown | HideInDevices.DesktopDown | HideInDevices.HubDown | HideInDevices.MobileUp | HideInDevices.TabletUp);
                             break;
                         }
-                    case DeviceTypeEnum.Desktop:
+                    case DeviceTypes.Desktop:
                         {
                             currentColumns = columnsInDesktop;
+                            currentOffset = offsetInDesktop;
                             columnHeight = columnHeightInDesktop;
+                            isHidden = column.HideInDevice.HasFlags(HideInDevices.DesktopDown | HideInDevices.HubDown | HideInDevices.MobileUp | HideInDevices.TabletUp | HideInDevices.DesktopUp);
                             break;
                         }
-                    case DeviceTypeEnum.Hub:
+                    case DeviceTypes.Hub:
                         {
                             currentColumns = columnsInHub;
+                            currentOffset = offsetInHub;
                             columnHeight = columnHeightInHub;
+                            isHidden = column.HideInDevice.HasFlags(HideInDevices.HubDown | HideInDevices.MobileUp | HideInDevices.TabletUp | HideInDevices.DesktopUp | HideInDevices.HubUp);
                             break;
                         }
                     default:
@@ -260,9 +331,16 @@ namespace ResponsiveGridSystem
                         }
                 }
 
-                column.Width = (width * currentColumns / MaxColumns) - (ColumnSpace.Left + ColumnSpace.Right + 1);
+                var offsetWidth = 0.0;
+                if (currentOffset > 0)
+                {
+                    offsetWidth = CalculateCurrentWidth(width, currentOffset);
+                }
+
+                column.Width = CalculateCurrentWidth(width, currentColumns);
                 column.Height = columnHeight;
-                column.Margin = ColumnSpace;
+                column.Margin = new Thickness(ColumnSpace.Left + offsetWidth, ColumnSpace.Top, ColumnSpace.Right, ColumnSpace.Bottom);
+                column.Visibility = isHidden ? Visibility.Collapsed : Visibility.Visible;
             }
         }
 
@@ -270,25 +348,37 @@ namespace ResponsiveGridSystem
         /// Gets the width of the device type by window.
         /// </summary>
         /// <returns>DeviceTypeEnum.</returns>
-        public DeviceTypeEnum GetDeviceTypeByWindowWidth()
+        private DeviceTypes GetDeviceTypeByWindowWidth()
         {
             var width = Window.Current.Bounds.Width;
             if (width > MaxDesktopWidth)
             {
-                return DeviceTypeEnum.Hub;
+                return DeviceTypes.Hub;
             }
 
             if (width > MaxTabletWidth)
             {
-                return DeviceTypeEnum.Desktop;
+                return DeviceTypes.Desktop;
             }
 
             if (width > MaxMobileWidth)
             {
-                return DeviceTypeEnum.Tablet;
+                return DeviceTypes.Tablet;
             }
 
-            return DeviceTypeEnum.Mobile;
+            return DeviceTypes.Mobile;
+        }
+
+
+        /// <summary>
+        /// Calculates the current width.
+        /// </summary>
+        /// <param name="width">The width.</param>
+        /// <param name="columns">The columns.</param>
+        /// <returns></returns>
+        private double CalculateCurrentWidth(double width, double columns)
+        {
+            return width * columns / Convert.ToDouble(MaxColumns) - (ColumnSpace.Left + ColumnSpace.Right + 0.5);
         }
 
         #endregion

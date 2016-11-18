@@ -1,6 +1,6 @@
 ﻿namespace ResponsiveGridSystem.Enums
 {
-    public enum DeviceTypeEnum
+    public enum DeviceTypes
     {
         Mobile, Tablet, Desktop, Hub
     }

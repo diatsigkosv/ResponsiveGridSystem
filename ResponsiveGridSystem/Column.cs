@@ -38,7 +38,14 @@ namespace ResponsiveGridSystem
         public int ColumnsInMobile
         {
             get { return (int)GetValue(ColumnsInMobileProperty); }
-            set { SetValue(ColumnsInMobileProperty, value); }
+            set
+            {
+                if (value < 0 || value > ((Row)Parent)?.MaxColumns)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(ColumnsInMobile));
+                }
+                SetValue(ColumnsInMobileProperty, value);
+            }
         }
 
         /// <summary>
@@ -48,7 +55,14 @@ namespace ResponsiveGridSystem
         public int ColumnsInTablet
         {
             get { return (int)GetValue(ColumnsInTabletProperty); }
-            set { SetValue(ColumnsInTabletProperty, value); }
+            set
+            {
+                if (value < 0 || value > ((Row)Parent)?.MaxColumns)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(ColumnsInTablet));
+                }
+                SetValue(ColumnsInTabletProperty, value);
+            }
         }
 
         /// <summary>
@@ -58,7 +72,14 @@ namespace ResponsiveGridSystem
         public int ColumnsInDesktop
         {
             get { return (int)GetValue(ColumnsInDesktopProperty); }
-            set { SetValue(ColumnsInDesktopProperty, value); }
+            set
+            {
+                if (value < 0 || value > ((Row)Parent)?.MaxColumns)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(ColumnsInDesktop));
+                }
+                SetValue(ColumnsInDesktopProperty, value);
+            }
         }
 
         /// <summary>
@@ -68,7 +89,102 @@ namespace ResponsiveGridSystem
         public int ColumnsInHub
         {
             get { return (int)GetValue(ColumnsInHubProperty); }
-            set { SetValue(ColumnsInHubProperty, value); }
+            set
+            {
+                if (value < 0 || value > ((Row)Parent)?.MaxColumns)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(ColumnsInHub));
+                }
+                SetValue(ColumnsInHubProperty, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the offset in mobile.
+        /// </summary>
+        /// <value>
+        /// The offset in mobile.
+        /// </value>
+        public int OffsetInMobile
+        {
+            get { return (int)GetValue(OffsetInMobileProperty); }
+            set
+            {
+                if (value < 0 || value > ((Row)Parent)?.MaxColumns)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(OffsetInMobile));
+                }
+                SetValue(OffsetInMobileProperty, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the offset in desktop.
+        /// </summary>
+        /// <value>
+        /// The offset in desktop.
+        /// </value>
+        public int OffsetInDesktop
+        {
+            get { return (int)GetValue(OffsetInDesktopProperty); }
+            set
+            {
+                if (value < 0 || value > ((Row)Parent)?.MaxColumns)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(OffsetInDesktop));
+                }
+                SetValue(OffsetInDesktopProperty, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the offset in tablet.
+        /// </summary>
+        /// <value>
+        /// The offset in tablet.
+        /// </value>
+        public int OffsetInTablet
+        {
+            get { return (int)GetValue(OffsetInTabletProperty); }
+            set
+            {
+                if (value < 0 || value > ((Row)Parent)?.MaxColumns)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(OffsetInTablet));
+                }
+                SetValue(OffsetInTabletProperty, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the offset in hub.
+        /// </summary>
+        /// <value>
+        /// The offset in hub.
+        /// </value>
+        public int OffsetInHub
+        {
+            get { return (int)GetValue(OffsetInHubProperty); }
+            set
+            {
+                if (value < 0 || value > ((Row)Parent)?.MaxColumns)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(OffsetInHub));
+                }
+                SetValue(OffsetInHubProperty, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the hide in device.
+        /// </summary>
+        /// <value>
+        /// The hide in device.
+        /// </value>
+        public HideInDevices HideInDevice
+        {
+            get { return (HideInDevices)GetValue(HideInDeviceProperty); }
+            set { SetValue(HideInDeviceProperty, value); }
         }
 
         #endregion
@@ -98,6 +214,36 @@ namespace ResponsiveGridSystem
         /// </summary>
         public static readonly DependencyProperty ColumnsInHubProperty = DependencyProperty.Register(
             "ColumnsInHub", typeof(int), typeof(Column), new PropertyMetadata(default(int)));
+
+        /// <summary>
+        /// The offset in mobile property
+        /// </summary>
+        public static readonly DependencyProperty OffsetInMobileProperty = DependencyProperty.Register(
+            "OffsetInMobile", typeof(int), typeof(Column), new PropertyMetadata(default(int)));
+
+        /// <summary>
+        /// The offset in tablet property
+        /// </summary>
+        public static readonly DependencyProperty OffsetInTabletProperty = DependencyProperty.Register(
+            "OffsetInTablet", typeof(int), typeof(Column), new PropertyMetadata(default(int)));
+
+        /// <summary>
+        /// The offset in desktop property
+        /// </summary>
+        public static readonly DependencyProperty OffsetInDesktopProperty = DependencyProperty.Register(
+            "OffsetInDesktop", typeof(int), typeof(Column), new PropertyMetadata(default(int)));
+
+        /// <summary>
+        /// The offset in hub property
+        /// </summary>
+        public static readonly DependencyProperty OffsetInHubProperty = DependencyProperty.Register(
+            "OffsetInHub", typeof(int), typeof(Column), new PropertyMetadata(default(int)));
+
+        /// <summary>
+        /// The hide in device property
+        /// </summary>
+        public static readonly DependencyProperty HideInDeviceProperty = DependencyProperty.Register(
+            "HideInDevice", typeof(HideInDevices), typeof(Column), new PropertyMetadata(default(HideInDevices)));
 
         #endregion
 
