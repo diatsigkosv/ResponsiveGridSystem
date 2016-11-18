@@ -3,13 +3,7 @@ Bootstrap like Grid System for Universal Windows Platform.
 
 ##Sample:
 ```xaml
-<Style x:Key="BaseRowStyle" TargetType="ext:Row">
-  <Setter Property="MaxMobileWidth" Value="640"/>
-  <Setter Property="MaxTabletWidth" Value="1007"/>
-  <Setter Property="MaxDesktopWidth" Value="1920"/>
-</Style>
-
-<ext:Row MaxColumns="12" ColumnSpace="5" ColumnHeightInMobile="100" Style="{StaticResource BaseRowStyle}">
+<ext:Row MaxColumns="12" ColumnSpace="5" ColumnHeightInMobile="100">
   <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="2" ColumnsInHub="3">
     <Grid Background="LightGray" />
   </ext:Column>
