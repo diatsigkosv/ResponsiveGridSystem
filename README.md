@@ -9,14 +9,7 @@ Bootstrap like Grid System for Universal Windows Platform.
   <Setter Property="MaxDesktopWidth" Value="1920"/>
 </Style>
 
-<ext:Row 
-  MaxColumns="12" 
-  ColumnSpace="5" 
-  ColumnHeightInMobile="100" 
-  ColumnHeightInTablet="120" 
-  ColumnHeightInDesktop="140" 
-  ColumnHeightInHub="150"
-  Style="{StaticResource BaseRowStyle}">
+<ext:Row MaxColumns="12" ColumnSpace="5" ColumnHeightInMobile="100" Style="{StaticResource BaseRowStyle}">
   <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="2" ColumnsInHub="3">
     <Grid Background="LightGray" />
   </ext:Column>
