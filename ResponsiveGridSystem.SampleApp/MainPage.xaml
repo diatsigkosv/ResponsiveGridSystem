@@ -9,119 +9,180 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Pivot Title="Responsive Grid System for UWP">
-
-            <PivotItem Header="Columns Sample">
+            <PivotItem Header="grid system sample">
                 <ScrollViewer>
                     <StackPanel>
                         <ext:Row MaxColumns="12" ColumnSpace="5" ColumnHeightInMobile="50">
                             <ext:Column ColumnsInMobile="1">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="11">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="11" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="2">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="10">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="3">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="9">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="9" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="4">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="8">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="5">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="7">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="7" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="6">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="6">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="7">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="7" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="5">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="8">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="4">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="9">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="9" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="3">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="10">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="2">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="11">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="11" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="1">
-                                <Grid Background="LightGray"/>
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                         </ext:Row>
                     </StackPanel>
                 </ScrollViewer>
             </PivotItem>
 
-            <PivotItem Header="Different Columns Sample">
+            <PivotItem Header="responsive sample">
                 <ScrollViewer>
                     <StackPanel>
                         <ext:Row MaxColumns="12" ColumnSpace="5" ColumnHeightInMobile="200">
                             <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
-                                <Grid Background="LightGray" />
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
-                                <Grid Background="LightGray" />
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
-                                <Grid Background="LightGray" />
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
-                                <Grid Background="LightGray" />
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
-                                <Grid Background="LightGray" />
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
-                                <Grid Background="LightGray" />
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
-                                <Grid Background="LightGray" />
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="7" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
-                                <Grid Background="LightGray" />
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                             <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ColumnsInDesktop="4" ColumnsInHub="3">
-                                <Grid Background="LightGray" />
+                                <Grid Background="LightGray">
+                                    <TextBlock Text="9" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
                             </ext:Column>
                         </ext:Row>
                     </StackPanel>
                 </ScrollViewer>
             </PivotItem>
 
-            <PivotItem Header="Offset Sample">
+            <PivotItem Header="offset sample">
                 <ScrollViewer>
                     <StackPanel>
                         <ext:Row MaxColumns="12" ColumnSpace="5" ColumnHeightInMobile="70">
@@ -149,7 +210,7 @@
                 </ScrollViewer>
             </PivotItem>
 
-            <PivotItem Header="Hide In Devices Sample">
+            <PivotItem Header="hide in device sample">
                 <ScrollViewer>
                     <StackPanel>
                         <ext:Row MaxColumns="12" ColumnSpace="5" ColumnHeightInMobile="70">
@@ -200,6 +261,39 @@
                 </ScrollViewer>
             </PivotItem>
 
+            <PivotItem Header="depth sample">
+                <ScrollViewer>
+                    <StackPanel>
+                        <ext:Row MaxColumns="12" ColumnSpace="5" ColumnHeightInMobile="200">
+                            <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ForceHeightInMobile="200" ForceHeightInTablet="410">
+                                <Grid Background="LightGray"/>
+                            </ext:Column>
+                            <ext:Column ColumnsInMobile="12" ColumnsInTablet="6" ForceHeightInMobile="410">
+                                <ext:Row ColumnSpace="5" ColumnHeightInMobile="200" Margin="-5">
+                                    <ext:Column ColumnsInMobile="6" ColumnsInTablet="6">
+                                        <Grid Background="DarkGray"/>
+                                    </ext:Column>
+                                    <ext:Column ColumnsInMobile="6" ColumnsInTablet="6">
+                                        <Grid Background="DarkGray"/>
+                                    </ext:Column>
+                                    <ext:Column ColumnsInMobile="6" ColumnsInTablet="6">
+                                        <Grid Background="DarkGray"/>
+                                    </ext:Column>
+                                    <ext:Column ColumnsInMobile="6" ColumnsInTablet="6">
+                                        <Grid Background="DarkGray"/>
+                                    </ext:Column>
+                                </ext:Row>
+                            </ext:Column>
+                            <ext:Column ColumnsInMobile="6" VerticalAlignment="Top">
+                                <Grid Background="LightGray"/>
+                            </ext:Column>
+                            <ext:Column ColumnsInMobile="6" VerticalAlignment="Top">
+                                <Grid Background="LightGray"/>
+                            </ext:Column>
+                        </ext:Row>
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
         </Pivot>
     </Grid>
 </Page>
