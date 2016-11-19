@@ -38,4 +38,8 @@ Bootstrap like Grid System for Universal Windows Platform.
 * **OffsetInTablet**: int (if not set: OffsetInMobile)
 * **OffsetInDesktop**: int (if not set: OffsetInTablet)
 * **OffsetInHub**: int (if not set: OffsetInDesktop)
+* **ForceHeightInMobile**: double (default)
+* **ForceHeightInTablet**: double (if not set: ForceHeightInMobile)
+* **ForceHeightInDesktop**: double (if not set: ForceHeightInTablet)
+* **ForceHeightInHub**: double (if not set: ForceHeightInDesktop)
 * **HideInDevice**: HideInDevices (**None=0**|MobileDown=1|TabletDown=2|DesktopDown=4|HubDown=8|MobileUp=16|TabletUp=32|DesktopUp=64|HubUp=128)
